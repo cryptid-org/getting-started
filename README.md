@@ -50,12 +50,12 @@ The entities taking part in a secure communication are as follows: the sender, t
 
 Now, we can consider the communication process itself through the four algorithms of a standard IBE scheme:
 
-  0. **Setup**: Prior to the actual communication, a one-time setup must be performed in order to initialize the system. This process generates the *public parameters* that must be distributed among all parties, and a *master secret* which should only be deployed to the Private Key Generator. The *master secret* allows the PKG to *extract* private keys.
-  1. **Encrypt**: The sender uses its identifier to encrypt the plaintext message. Afterwards, the ciphertext is transmitted to the recipient.
+  0. **Setup**: Prior to the actual communication, a one-time setup must be performed in order to initialize the system. This process generates the *public parameters* that must be distributed among all parties, and the *master secret* which should only be deployed to the Private Key Generator. The *master secret* allows the PKG to *extract* private keys.
+  1. **Encrypt**: The sender uses its identifier to *encrypt* the plaintext message. Afterwards, the ciphertext is transmitted to the recipient.
   2. **Extract**: When the recipient receives the ciphertext, it queries the trusted third-party for its private key with their public key. Given the identity of the recipient is confirmed, the private key is *extracted* and sent back.
-  3. **Decrypt**: Possessing the private key pair of the public key, the recipient attemps to decrypt the received ciphertext. If the private key matches the public key that was used during encryption, the process succeeds, resulting in the plaintext.
+  3. **Decrypt**: Possessing the private key pair of the public key, the recipient attemps to *decrypt* the received ciphertext. If the private key matches the public key that was used during encryption, the process succeeds, resulting in the plaintext.
 
-The greatest advantage of IBE lies in the fact that neither the sender, nor the receiver needed to obtain each other's public keys. When performing the encryption, they simply used information they already knew before.
+The greatest advantage of IBE lies in the fact that neither the sender, nor the recipient needed to obtain each other's public keys. When performing the encryption, they simply used information they already knew before.
 
 ### Further Readings
 
